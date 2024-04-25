@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
 import { Button, Table } from "react-bootstrap";
 import Navbar from "./Navbar";
+import Loading from "../../Components/Loading";
 
 const SalesReport = () => {
     const [salesData, setSalesData] = useState([]);
 
     useEffect(() => {
-        fetch("")
+        fetch("https://fakestoreapi.com/products")
             .then((response) => response.json())
             .then((data) => {
                 setSalesData(data);
             });
     }, []);
-
+    if (salesData.length == 0) {
+        return <Loading />
+    }
     return (
         <>
             <Navbar />
@@ -22,15 +25,23 @@ const SalesReport = () => {
                 <Table striped bordered hover>
                     <thead>
                         <tr>
-                            <th>Order ID</th>
-                            <th>User ID</th>
-                            <th>Product</th>
-                            <th>Quantity</th>
-                            <th>Total Price</th>
+                            <th>Product ID</th>
+                            <th>Name</th>
+                            <th>Image</th>
+                            <th>Rate</th>
                         </tr>
                     </thead>
                     <tbody>
-
+                        {salesData.map((product) => (
+                            <tr key={product.id}>
+                                <td>{product.id}</td>
+                                <td>{product.title}</td>
+                                <td>
+                                    <img src={product.image} alt={product.title} style={{ width: 100, height: 100 }} />
+                                </td>
+                                <td>$ {product.price}</td>
+                            </tr>
+                        ))}
                     </tbody>
                 </Table>
                 <Button onClick={() => window.print()} className="btn btn-dark">Download Sales Report</Button>

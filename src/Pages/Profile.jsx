@@ -40,7 +40,7 @@ function Profile() {
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-md-8">
-          <div className="card my-5">
+          <div className="card my-5 border border-black">
             <div className="card-body">
               <h2 className="card-title">Hey! {fullName}</h2>
               <div className="text-center mb-3">
@@ -49,9 +49,9 @@ function Profile() {
                   <input type="file" accept="image/*" onChange={handleImageChange} className="form-control mt-3 m-auto" style={{ width: '60%' }} />
                 )}
               </div>
-              <p className="card-text">Address: {address}</p>
-              <p className="card-text">Phone: {phone}</p>
-              <p className="card-text">Email: {email}</p>
+              <p className="card-text "><b>Address:</b> {address}</p>
+              <p className="card-text"><b>Phone:</b> {phone}</p>
+              <p className="card-text"><b>Email:</b> {email}</p>
             </div>
           </div>
         </div>
@@ -63,7 +63,7 @@ function Profile() {
   return (
     <>
       <Navbar />
-        {fullName != "" ? <Registered /> : <NotRegister />}
+      {fullName != "" ? <Registered /> : <NotRegister />}
       <Footer />
     </>
   )

@@ -172,20 +172,23 @@ import ProductList from "./ProductList";
 import CreateProduct from "./CreateProduct";
 import EditProduct from "./EditProduct";
 import Navbar from "./Navbar";
+import Loading from "../../Components/Loading";
 
 const ProductManagement = () => {
     const [products, setProducts] = useState([]);
     const [showCreateModal, setShowCreateModal] = useState(false);
     const [showEditModal, setShowEditModal] = useState(false);
     const [editProduct, setEditProduct] = useState(null);
+    const [limit, setLimit] = useState(5)
 
     useEffect(() => {
-        fetch("https://fakestoreapi.com/products")
+        fetch(`https://fakestoreapi.com/products?limit=${limit}`)
             .then((response) => response.json())
             .then((data) => {
                 setProducts(data);
+
             });
-    }, []);
+    }, [limit]);
 
     const handleDelete = (id) => {
         setProducts(products.filter((product) => product.id !== id));
@@ -232,14 +235,18 @@ const ProductManagement = () => {
         setProducts([...products, newProduct]);
         handleCreateClose();
     };
-
+    if (products.length == 0) {
+        return (
+            <Loading />
+        )
+    }
     return (
         <>
             <Navbar />
             <div className="d-flex flex-column align-items-center">
                 <h2>Product Management</h2>
                 <hr className="container" />
-                <ProductList products={products} handleEditShow={handleEditShow} handleDelete={handleDelete} />
+                <ProductList products={products} handleEditShow={handleEditShow} handleDelete={handleDelete} setLimit={setLimit} />
                 <Button variant="primary" onClick={handleCreateShow}>
                     Create
                 </Button>
@@ -252,7 +259,8 @@ const ProductManagement = () => {
                         handleEdited={handleEdited}
                     />
                 )}
-               
+
+
             </div>
         </>
     );

@@ -5,7 +5,7 @@ import Footer from "../Components/Footer"
 import { useDispatch, useSelector } from "react-redux";
 import { addToWishlist } from "../Redux/WishlistSlice";
 import toast from "react-hot-toast";
-import "./Loader.css"
+import Loading from "../Components/Loading";
 
 const Products = () => {
     const [products, setProducts] = useState([]);
@@ -35,16 +35,8 @@ const Products = () => {
 
     if (!searchProducts.length) {
         return (
-            <div className="dot-spinner m-auto">
-                <div className="dot-spinner__dot"></div>
-                <div className="dot-spinner__dot"></div>
-                <div className="dot-spinner__dot"></div>
-                <div className="dot-spinner__dot"></div>
-                <div className="dot-spinner__dot"></div>
-                <div className="dot-spinner__dot"></div>
-                <div className="dot-spinner__dot"></div>
-                <div className="dot-spinner__dot"></div>
-            </div>)
+            <Loading/>
+            )
     }
 
     return (
@@ -68,10 +60,11 @@ const Products = () => {
                         <div className="col-md-4 col-sm-6 col-xs-8 col-12 mb-4" key={product.id}>
                             <div className="card mb-4 shadow-sm">
                                 <img
-                                    className="card-img- p-3"
+                                    className="card-img- p-3 "
                                     src={product.image}
                                     alt={product.title}
                                     height={"300px"}
+                                    style={{objectFit: "fill"}}
                                 />
                             </div>
                             <div className="card-body">

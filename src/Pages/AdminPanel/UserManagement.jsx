@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Button, Table } from "react-bootstrap";
 import Navbar from "./Navbar";
+import Loading from "../../Components/Loading";
 
 const UserManagement = () => {
     const [users, setUsers] = useState([]);
@@ -29,7 +30,11 @@ const UserManagement = () => {
             return user;
         }));
     };
-
+    if (users.length == 0) {
+        return (
+            <Loading />
+        )
+    }
     return (
         <>
             <Navbar />

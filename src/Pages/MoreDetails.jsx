@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom"
 import { useDispatch } from 'react-redux';
 import { addItem } from '../Redux/CartSlice';
 import toast from 'react-hot-toast';
+import Loading from '../Components/Loading';
 
 function MoreDetails() {
     const { id } = useParams();
@@ -24,16 +25,8 @@ function MoreDetails() {
 
     if (!product) {
         return (
-            <div className="dot-spinner m-auto">
-                <div className="dot-spinner__dot"></div>
-                <div className="dot-spinner__dot"></div>
-                <div className="dot-spinner__dot"></div>
-                <div className="dot-spinner__dot"></div>
-                <div className="dot-spinner__dot"></div>
-                <div className="dot-spinner__dot"></div>
-                <div className="dot-spinner__dot"></div>
-                <div className="dot-spinner__dot"></div>
-            </div>)
+            <Loading/>
+            )
     }
 
 
