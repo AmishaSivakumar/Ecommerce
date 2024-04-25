@@ -22,7 +22,7 @@ function Profile() {
 
 
   const NotRegister = () => (
-    <div className="container" style={{height: "80vh"}}>
+    <div className="container" style={{ height: "80vh" }}>
       <div className="row">
         <div className="col-md-12 bg-light text-center">
           <h1 className="text-center">Profile</h1>
@@ -37,7 +37,7 @@ function Profile() {
   );
 
   const Registered = () => (
-    <div className="container" style={{height: "80vh"}}>
+    <div className="container" style={{ height: "80vh" }}>
       <div className="row justify-content-center">
         <div className="col-md-8">
           <div className="card my-5 border border-black">
@@ -49,9 +49,22 @@ function Profile() {
                   <input type="file" accept="image/*" onChange={handleImageChange} className="form-control mt-3 m-auto" style={{ width: '60%' }} />
                 )}
               </div>
-              <p className="card-text "><b>Address:</b> {address}</p>
-              <p className="card-text"><b>Phone:</b> {phone}</p>
-              <p className="card-text"><b>Email:</b> {email}</p>
+              <table className="table">
+                <tbody>
+                  <tr>
+                    <td><b>Address:</b></td>
+                    <td>{address}</td>
+                  </tr>
+                  <tr>
+                    <td><b>Phone:</b></td>
+                    <td>{phone}</td>
+                  </tr>
+                  <tr>
+                    <td><b>Email:</b></td>
+                    <td>{email}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
