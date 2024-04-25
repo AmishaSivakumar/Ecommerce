@@ -44,7 +44,7 @@ const SalesReport = () => {
                         ))}
                     </tbody>
                 </Table>
-                <Button onClick={() => window.print()} className="btn btn-dark">Download Sales Report</Button>
+                <Button onClick={() => window.print()} className="btn btn-dark mb-3">Download Sales Report</Button>
             </div>
         </>
     );
