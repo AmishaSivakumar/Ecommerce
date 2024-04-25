@@ -8,7 +8,7 @@ function Contact() {
     return (
         <>
             <Navbar />
-            <div className="d-flex flex-column align-items-center">
+            <div className="d-flex flex-column align-items-center" style={{height: "80vh"}}>
                 <h1 className="text-center">Contact Us</h1>
                 <hr className='container' />
                 <Form className="w-50 p-3">

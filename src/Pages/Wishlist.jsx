@@ -24,7 +24,7 @@ const Wishlist = () => {
     };
 
     const EmptyWishlist = () => (
-        <div className="container">
+        <div className="container" style={{ height: "70vh" }}>
             <div className="row">
                 <div className="col-md-12 py-5 bg-light text-center">
                     <h4 className="p-3 display-5">Your Wishlist is Empty</h4>
@@ -46,7 +46,8 @@ const Wishlist = () => {
                                 src={product.image}
                                 alt={product.title}
                                 height="200px"
-                                width="200px" />
+                                width="200px"
+                                style={{ objectFit: "scale-down" }} />
                             <div className="card-body">
                                 <h5 className="card-title text-truncate">{product.title}</h5>
                                 <p className="card-text">

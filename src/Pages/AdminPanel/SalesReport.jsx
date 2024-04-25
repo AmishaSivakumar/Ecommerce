@@ -37,7 +37,7 @@ const SalesReport = () => {
                                 <td>{product.id}</td>
                                 <td>{product.title}</td>
                                 <td>
-                                    <img src={product.image} alt={product.title} style={{ width: 100, height: 100 }} />
+                                    <img src={product.image} alt={product.title} style={{ width: 100, height: 100, objectFit: "scale-down" }} />
                                 </td>
                                 <td>$ {product.price}</td>
                             </tr>

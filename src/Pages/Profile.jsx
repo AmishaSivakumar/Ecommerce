@@ -22,7 +22,7 @@ function Profile() {
 
 
   const NotRegister = () => (
-    <div className="container">
+    <div className="container" style={{height: "80vh"}}>
       <div className="row">
         <div className="col-md-12 bg-light text-center">
           <h1 className="text-center">Profile</h1>
@@ -37,7 +37,7 @@ function Profile() {
   );
 
   const Registered = () => (
-    <div className="container">
+    <div className="container" style={{height: "80vh"}}>
       <div className="row justify-content-center">
         <div className="col-md-8">
           <div className="card my-5 border border-black">

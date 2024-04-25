@@ -35,8 +35,8 @@ const Products = () => {
 
     if (!searchProducts.length) {
         return (
-            <Loading/>
-            )
+            <Loading />
+        )
     }
 
     return (
@@ -64,7 +64,7 @@ const Products = () => {
                                     src={product.image}
                                     alt={product.title}
                                     height={"300px"}
-                                    style={{objectFit: "fill"}}
+                                    style={{ objectFit: "scale-down" }}
                                 />
                             </div>
                             <div className="card-body">

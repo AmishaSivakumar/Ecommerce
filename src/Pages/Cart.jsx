@@ -13,7 +13,7 @@ const Cart = () => {
   const cartItems = Object.values(items);
 
   const EmptyCart = () => (
-    <div className="container">
+    <div className="container" style={{height: "70vh"}}>
       <div className="row">
         <div className="col-md-12 py-5 bg-light text-center">
           <h4 className="p-3 display-5">Your Cart is Empty</h4>
@@ -27,7 +27,7 @@ const Cart = () => {
 
   const ShowCart = () => (
     <>
-      <section className="h-100 gradient-custom">
+      <section className="h-100 gradient-custom" >
         <div className="container py-5">
           <div className="row d-flex justify-content-center my-4">
             <div className="col-md-8">

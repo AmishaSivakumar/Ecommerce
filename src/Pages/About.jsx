@@ -6,7 +6,7 @@ function About() {
     return (
         <>
             <Navbar />
-            <div className="d-flex flex-column align-items-center">
+            <div className="d-flex flex-column align-items-center" style={{height: "80vh"}}>
                 <h1 className="text-center">About Us</h1>
                 <hr className='container' />
                 <p className='container text-center lead'>

@@ -17,14 +17,14 @@ function Register() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/');
+    navigate('/profile');
     dispatch(setUserDetails({ fullName, email, password, address, phone }));
   };
 
   return (
     <>
       <Navbar />
-      <div className="d-flex flex-column align-items-center">
+      <div className="d-flex flex-column align-items-center" style={{height: "80vh"}}>
         <h1 className="text-center">Register</h1>
         <hr className='container' />
         <Form className="w-50 p-3" onSubmit={handleSubmit}>
