@@ -33,16 +33,33 @@ const Products = () => {
 
 
 
-    if (!searchProducts.length) {
+    if (!products.length) {
         return (
             <Loading />
+        )
+    }
+    if (!searchProducts.length) {
+        return (
+            <>
+                <Navbar />
+                <div className="container" style={{ height: "70vh" }}>
+                    <div className="row">
+                        <div className="col-md-12 py-5 bg-light text-center">
+                            <h4 className="p-3 display-5">Oops! No such product</h4>
+                            <Link to="/" className="btn btn-outline-dark mx-4">
+                                <i className="bi bi-arrow-left"></i> Back to home
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+                <Footer />
+            </>
         )
     }
 
     return (
         <>
             <Navbar />
-
             <h1 className="text-center">Latest Products</h1>
             <hr className='container' />
             <div className="container my-5 ">
@@ -91,6 +108,7 @@ const Products = () => {
             <Footer />
         </>
     );
+
 };
 
 export default Products;

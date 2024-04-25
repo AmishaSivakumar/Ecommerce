@@ -24,17 +24,15 @@ function MoreDetails() {
     };
 
     if (!product) {
-        return (
-            <Loading/>
-            )
+        return <Loading />
     }
 
 
     return (
         <>
             <Navbar /> <br />
-            <center>
-                <div className="container row" key={product.id}>
+            <center style={{ height: "70vh" }}>
+                <div className="container row" key={product.id} >
                     <h1>{product.title}</h1>
                     <div className="col-md-6 col-sm-12 py-3 ">
                         <img
@@ -61,7 +59,7 @@ function MoreDetails() {
                     </div>
                 </div>
             </center> <br />
-            <Footer />
+            <Footer/>
         </>
     )
 }
