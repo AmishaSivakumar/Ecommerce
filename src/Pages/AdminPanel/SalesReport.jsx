@@ -32,9 +32,9 @@ const SalesReport = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {salesData.map((product) => (
+                        {salesData.map((product, index) => (
                             <tr key={product.id}>
-                                <td>{product.id}</td>
+                                <td>{index + 1}</td>
                                 <td>{product.title}</td>
                                 <td>
                                     <img src={product.image} alt={product.title} style={{ width: 100, height: 100, objectFit: "scale-down" }} />
