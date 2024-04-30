@@ -22,12 +22,10 @@ const AdminDashboard = () => {
             <Navbar />
             <div className="container text-center">
                 <hr className="container" />
-                <div>
-                    <div>
-                        <h3>Statistics</h3>
-                        <p>Total Users: {totalUsers}</p>
-                        <p>Total Products: {totalProducts}</p>
-                    </div>
+                <div className='p-5 bg-light shadow rounded'>
+                    <h3>Statistics</h3>
+                    <p>Total Users: {totalUsers}</p>
+                    <p>Total Products: {totalProducts}</p>
                 </div>
             </div>
         </>

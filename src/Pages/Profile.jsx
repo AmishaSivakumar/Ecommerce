@@ -40,7 +40,7 @@ function Profile() {
     <div className="container" style={{ height: "80vh" }}>
       <div className="row justify-content-center">
         <div className="col-md-8">
-          <div className="card my-5 border border-black">
+          <div className="card my-5 bg-light shadow rounded">
             <div className="card-body">
               <h2 className="card-title">Hey! {fullName}</h2>
               <div className="text-center mb-3">
